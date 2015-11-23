@@ -152,10 +152,10 @@ if g:markdown_enable_mappings
 
   if g:markdown_enable_insert_mode_mappings
     " Indenting things
-    inoremap <silent> <buffer> <script> <expr> <Tab>
-      \ <SID>IsAnEmptyListItem() \|\| <SID>IsAnEmptyQuote() ? '<C-O>:call <SID>Indent(1)<CR>' : '<Tab>'
-    inoremap <silent> <buffer> <script> <expr> <S-Tab>
-      \ <SID>IsAnEmptyListItem() \|\| <SID>IsAnEmptyQuote() ? '<C-O>:call <SID>Indent(0)<CR>' : '<Tab>'
+    " inoremap <silent> <buffer> <script> <expr> <Tab>
+    "   \ <SID>IsAnEmptyListItem() \|\| <SID>IsAnEmptyQuote() ? '<C-O>:call <SID>Indent(1)<CR>' : '<Tab>'
+    " inoremap <silent> <buffer> <script> <expr> <S-Tab>
+    "   \ <SID>IsAnEmptyListItem() \|\| <SID>IsAnEmptyQuote() ? '<C-O>:call <SID>Indent(0)<CR>' : '<Tab>'
 
     if g:markdown_drop_empty_blockquotes
       " Remove empty quote and list items when press <CR>
@@ -166,14 +166,14 @@ if g:markdown_enable_mappings
     endif
 
     " Format tables
-    inoremap <silent> <buffer> <Bar> <Bar><Esc>:call markdown#FormatTable()<CR>a
+    " inoremap <silent> <buffer> <Bar> <Bar><Esc>:call markdown#FormatTable()<CR>a
   endif
 
   " Switch status of things
   execute 'nnoremap <silent> <buffer> ' . g:markdown_mapping_switch_status . ' :call markdown#SwitchStatus()<CR>'
 
   " Leader mappings
-  nnoremap <buffer> <Leader>e :MarkdownEditBlock<CR>
+  " nnoremap <buffer> <Leader>e :MarkdownEditBlock<CR>
   vnoremap <buffer> <Leader>e :MarkdownEditBlock<CR>
   nnoremap <silent> <buffer> <Leader>ft  :call markdown#FormatTable()<CR>
 
